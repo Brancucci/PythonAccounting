@@ -46,4 +46,17 @@ print('\n"Testing Acount" \n')
 # test code for account class
 account = Account(123456789, "Anthony")
 print("The account number is: {} and the account name is: {}".format(account.account_num, account.account_name))
-print("#: {} name: {} balance: {} length: {} ".format(account.account_num, account.account_name, account.balance, len(account)))
+print("#: {} name: {} balance: {} all_usd: {} length: {} ".format(account.account_num, account.account_name, account.balance, account.all_usd, len(account)))
+account.apply(Transaction(100, "2008-11-14"))
+account.apply(Transaction(150, "2008-12-09"))
+account.apply(Transaction(-95, "2009-01-22"))
+print("#: {} name: {} balance: {} all_usd: {} length: {} ".format(account.account_num, account.account_name, account.balance, account.all_usd, len(account)))
+account.apply(Transaction(50, "2008-12-09", "EUR", 1.53))
+print("#: {} name: {} balance: {} all_usd: {} length: {} ".format(account.account_num, account.account_name, account.balance, account.all_usd, len(account)))
+account.save()
+newaccount = Account(123456789, "Anthony")
+print("new account info: {}  {}  {}".format(newaccount.balance, newaccount.all_usd, len(newaccount)))
+newaccount.load()
+print("new account info: {} {} {}".format(newaccount.balance, newaccount.all_usd, len(newaccount)))
+
+

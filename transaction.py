@@ -1,7 +1,14 @@
-
-
 class Transaction:
-    """ A class used for transaction purposes """
+    """ A class used for transaction purposes
+
+        Instance variables:
+        amount -- the value amount of the transaction
+        date -- the date the transaction took place
+        currency -- the currency used in the transaction
+        usd_conversion_rate -- the conversion rate multiplier to use to convert to USD
+        description -- description of the transaction
+
+        """
 
     # class initializer :: note: __ before a class instance variable makes it private
     def __init__(self, amount, date, currency="USD", conversion=1, description=None):
@@ -11,46 +18,34 @@ class Transaction:
         self.__usd_conversion_rate = conversion  # private read only
         self.__description = description  # private read only
 
-    # TODO remove this print statement
     @property
     def amount(self):
         """ Method for getting the amount """
-        print("Getting amount")
         return self.__amount
 
-    # TODO remove this print statement
     @property
     def date(self):
         """ Method for getting the date """
-        print("Getting date")
         return self.__date
 
-    # TODO remove this print statement
     @property
     def currency(self):
         """ Method for getting currency """
-        print("Getting currency")
         return self.__currency
 
-    # TODO remove this print statement
     @property
     def usd_conversion_rate(self):
         """ Method for getting the usd conversion rate """
-        print("Getting usf conversion rate")
         return self.__usd_conversion_rate
 
-    # TODO remove this print statement
     @property
     def description(self):
         """ Method for getting the description """
-        print("Getting the description")
         return self.__description
 
-    # TODO remove this print statement
     @property
     def usd(self):
         """" Method for calculating amount in US dollars """
-        print("Getting the amount in us dollars")
         return self.__amount * self.__usd_conversion_rate
 
 
